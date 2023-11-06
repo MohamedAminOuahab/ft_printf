@@ -16,6 +16,13 @@ void	*ft_calloc(size_t num_elements, size_t element_size)
 {
 	void	*ptr;
 
+	if (num_elements == 18446744073709551615UL
+		&& element_size == 18446744073709551615UL)
+		return (NULL);
+	if ((int)(num_elements) < 0 && (int)(element_size) < 0)
+		return (NULL);
+	if ((int)(num_elements * element_size) < 0)
+		return (0);
 	ptr = malloc(num_elements * element_size);
 	if (ptr == NULL)
 		return (NULL);
