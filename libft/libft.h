@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moouahab <mohamed.ouahab1999@gmail.com>    +#+  +:+       +#+        */
+/*   By: moouahab <moouahab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 21:23:12 by moouahab          #+#    #+#             */
-/*   Updated: 2023/10/19 21:23:12 by moouahab         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:31:40 by moouahab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int	ft_putchar_fd(char c, int fd);
-int	ft_putstr_fd(char	*str, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char	*str, int fd);
 void	ft_putendl_fd(char	*s, int fd);
-int	ft_putnbr_fd(int nb, int fd);
+int		ft_putnbr_fd(int nb, int fd);
+int		ft_putnbr_unsigned_fd(unsigned int nb, int fd);
+int		ft_putnbr_base(int nbr, char *base);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char	*dst, char const	*src, size_t size);
 size_t	ft_strlcpy(char	*dst, const char	*src, size_t size);

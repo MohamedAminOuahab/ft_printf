@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moouahab <mohamed.ouahab1999@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:47:48 by moouahab          #+#    #+#             */
-/*   Updated: 2023/10/31 15:47:48 by moouahab         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:21:20 by moouahab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /**
 * @param *format 	: 	pointeur de formatage
 * @param ... 		: 	une ellipse indiquant que des arguments 
-* 				supplémentaires peuvent être transmis
+* 						supplémentaires peuvent être transmis
 *
 * @return		:	taill de la chaine de formatage
 * @detail 		:	recode un printf
@@ -29,8 +29,9 @@
 * va_start		:	va pemettre de intialiser la variable va_list
 * va_end		:	va libere la variable va_list
 *
-* va_arg		:	permet d'extraire et de typee le paramettre suivant (Attention au cas)
-* 				va_args(<variable de type va_list>, <type du parametre>);
+* va_arg		:	permet d'extraire et de typee le 
+*					paramettre suivant (Attention au cas)
+* 					va_args(<variable de type va_list>, <type du parametre>);
 *
 * 
 *
@@ -53,9 +54,9 @@ static int	ft_formatage(char c, va_list	args)
 		taill += ft_putstr_fd(va_arg(args, char *), 1);
 	else if (c == 'd' || c == 'i')
 		taill += ft_putnbr_fd(va_arg(args, int), 1);
-	/*else if (c == 'u')
-		taill += ft_putnbr_unsigned(va_arg(args, unsigned int));
-	else if (c == 'x' || c == 'p' || c == 'X')
+	else if (c == 'u')
+		taill += ft_putnbr_unsigned_fd(va_arg(args, unsigned int), 1);
+	/*else if (c == 'x' || c == 'p' || c == 'X')
 		taill += ft_puthexa(c, va_arg(agrs, int));*/
 	else if (c == '%')
 		taill += ft_putchar_fd('%', 1);
