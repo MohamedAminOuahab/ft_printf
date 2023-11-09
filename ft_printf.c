@@ -6,12 +6,11 @@
 /*   By: moouahab <mohamed.ouahab1999@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:47:48 by moouahab          #+#    #+#             */
-/*   Updated: 2023/11/07 18:21:20 by moouahab         ###   ########.fr       */
+/*   Updated: 2023/11/09 13:36:25 by moouahab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft/libft.h"
+#include "ft_printf.h"
 
 /**
 * @param *format 	: 	pointeur de formatage
@@ -56,8 +55,8 @@ static int	ft_formatage(char c, va_list	args)
 		taill += ft_putnbr_fd(va_arg(args, int), 1);
 	else if (c == 'u')
 		taill += ft_putnbr_unsigned_fd(va_arg(args, unsigned int), 1);
-	/*else if (c == 'x' || c == 'p' || c == 'X')
-		taill += ft_puthexa(c, va_arg(agrs, int));*/
+	else if (c == 'x' || c == 'p' || c == 'X')
+		taill += ft_puthexa(c, va_arg(args, long int));
 	else if (c == '%')
 		taill += ft_putchar_fd('%', 1);
 	return (taill);
