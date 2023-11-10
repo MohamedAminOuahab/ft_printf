@@ -6,7 +6,7 @@
 /*   By: moouahab <moouahab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 19:19:56 by moouahab          #+#    #+#             */
-/*   Updated: 2023/11/09 19:05:29 by moouahab         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:26:36 by moouahab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_count_digit(int n)
 	int	digit;
 
 	digit = 0;
+	if (n <= 0)
+		digit += 1;
 	while (n)
 	{
 		n /= 10;

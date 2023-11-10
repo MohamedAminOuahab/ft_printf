@@ -6,7 +6,7 @@
 /*   By: moouahab <moouahab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 03:06:56 by moouahab          #+#    #+#             */
-/*   Updated: 2023/11/09 19:05:48 by moouahab         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:04:38 by moouahab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int	ft_putstr_fd(char	*str, int fd)
 {
-	int len;
+	int i;
 
-	len = ft_strlen(str);
-	while (*str)
-		ft_putchar_fd(*str++, fd);
-	return (len);
+	i = 0;
+	if (!str)
+		i += write(1, "(null)", 6);
+	else
+	{
+		while (str[i])
+			ft_putchar_fd(str[i++], fd);
+	}
+	return (i);
 }
