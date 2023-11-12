@@ -6,7 +6,7 @@
 /*   By: moouahab <mohamed.ouahab1999@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:47:48 by moouahab          #+#    #+#             */
-/*   Updated: 2023/11/09 13:36:25 by moouahab         ###   ########.fr       */
+/*   Updated: 2023/11/12 06:35:04 by moouahab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
 * @param *format 	: 	pointeur de formatage
 * @param ... 		: 	une ellipse indiquant que des arguments 
-* 						supplémentaires peuvent être transmis
+* 				supplémentaires peuvent être transmis
 *
 * @return		:	taill de la chaine de formatage
 * @detail 		:	recode un printf
@@ -29,8 +29,8 @@
 * va_end		:	va libere la variable va_list
 *
 * va_arg		:	permet d'extraire et de typee le 
-*					paramettre suivant (Attention au cas)
-* 					va_args(<variable de type va_list>, <type du parametre>);
+*				paramettre suivant (Attention au cas)
+* 				va_args(<variable de type va_list>, <type du parametre>);
 *
 * 
 *
@@ -41,6 +41,18 @@
 *
 *
 **/
+
+static int     ft_puthax(unsigned int nbr, char c)
+{
+        int count;
+
+        count = 0;
+	if (c == 'x' || c == 'p')
+        	count += ft_putnbr_base(nbr, "0123456789abcdef");
+	if (c == 'X')
+		count += ft_putnbr_base(nbr, "0123456789ABCDEF");
+        return (count);
+}
 
 static int	ft_formatage(char c, va_list	args)
 {
@@ -55,8 +67,10 @@ static int	ft_formatage(char c, va_list	args)
 		taill += ft_putnbr_fd(va_arg(args, int), 1);
 	else if (c == 'u')
 		taill += ft_putnbr_unsigned_fd(va_arg(args, unsigned int), 1);
-	else if (c == 'x' || c == 'p' || c == 'X')
-		taill += ft_puthexa(c, va_arg(args, long int));
+	else if (c == 'x' || c == 'X')
+		taill += ft_puthax(va_arg(args, unsigned int), c);
+	else if (c == 'p')
+		taill += ft_print_ptr(va_arg(args, void *));
 	else if (c == '%')
 		taill += ft_putchar_fd('%', 1);
 	return (taill);

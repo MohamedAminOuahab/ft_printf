@@ -1,17 +1,17 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: moouahab <moouahab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/09 17:44:09 by moouahab          #+#    #+#              #
-#    Updated: 2023/11/09 19:17:57 by moouahab         ###   ########.fr        #
+#    Updated: 2023/11/12 05:25:15 by moouahab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBC =	ft_printf.c ft_putstr_fd.c ft_putchar_fd.c ft_putnbr_unsigned.c ft_putnbr_base.c\
-		ft_puthaxa.c ft_putnbr_fd.c ft_strlen.c\
+LIBC =	ft_printf.c ft_putstr_fd.c ft_putchar_fd.c ft_putnbr_unsigned.c\
+	ft_putnbr_fd.c ft_strlen.c ft_putnbr_base.c ft_print_ptr.c \
 
 SRCS = ${LIBC}
 
