@@ -6,12 +6,12 @@
 #    By: moouahab <moouahab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/09 17:44:09 by moouahab          #+#    #+#              #
-#    Updated: 2023/11/12 05:25:15 by moouahab         ###   ########.fr        #
+#    Updated: 2023/11/12 22:39:52 by moouahab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBC =	ft_printf.c ft_putstr_fd.c ft_putchar_fd.c ft_putnbr_unsigned.c\
-	ft_putnbr_fd.c ft_strlen.c ft_putnbr_base.c ft_print_ptr.c \
+LIBC = 	src/ft_printf.c  fonction/ft_putstr_fd.c fonction/ft_putchar_fd.c fonction/ft_putnbr_unsigned.c\
+		fonction/ft_putnbr_fd.c fonction/ft_strlen.c fonction/ft_putnbr_base.c fonction/ft_print_ptr.c \
 
 SRCS = ${LIBC}
 
